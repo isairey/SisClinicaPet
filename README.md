@@ -89,8 +89,8 @@ Se recomienda utilizar un entorno virtual para aislar las dependencias.
 ### 1️⃣ Clonar el repositorio
 
 ```bash id="a8n4k2"
-git clone https://github.com/isairey/tu-repo.git
-cd tu-repo
+git clone https://github.com/isairey/SisClinicaVet.git
+cd SisClinicaVet
 ```
 
 ---
