@@ -1,87 +1,228 @@
-# <img src="https://github.com/Joey-Resende/PetVet/blob/main/PetVet/static/img/faviconII.ico" title="" alt="icon" width="50">  **PetVet**
+# 🐾 Sistema Clínico Veterinario - PetVet
 
-<img title="cat-cest" src="https://github.com/Joey-Resende/PetVet/blob/main/PetVet/static/img/cat_yellow.png" alt="" data-align="center">
+<p align="center">
+  <img src="https://github.com/Joey-Resende/PetVet/blob/main/PetVet/static/img/faviconII.ico" width="80">
+</p>
 
-## **Ideia do projeto**
+<p align="center">
+  <strong>Sistema web para la gestión de clínicas veterinarias desarrollado en Python con Django</strong>
+</p>
 
-Trabalho atualmente como porteiro em uma clínica veterinária universitária e nela os registros são manuais, não existe um sistema para gerenciar os cadastros de pacientes, de atendimentos e etc. Isso me fez pensar em criar o meu próprio sistema para resolver esse problema. Dai surge o **PetVet** com a ideia de estudar **Python** com o framework **Django**. Pensei em usar Django por querer a minha aplicação na web e ele ser o framework web python mais usado.
+---
 
-## **Dependências**
+## 📋 Descripción del Proyecto
 
-O **PetVet** requer os sequintes componentes:
+**PetVet** es un sistema clínico veterinario desarrollado para digitalizar y optimizar la gestión de una clínica veterinaria.
 
-- [Python](https://www.python.org/)
-- [Poetry](https://python-poetry.org/) 
-- [Django](https://www.djangoproject.com/) 
-- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/)
-- [crispy-bootstrap5](https://github.com/django-crispy-forms/crispy-bootstrap5) 
-- [django-braces](https://django-braces.readthedocs.io/en/latest/)
+Surge a partir de la necesidad de reemplazar los registros manuales por un sistema moderno que permita administrar:
 
-Para todos os detalhes das dependências confira o [pyproject.toml](https://github.com/Joey-Resende/PetVet/blob/main/pyproject.toml)
+* Pacientes (mascotas) 🐶🐱
+* Tutores (dueños) 👤
+* Veterinarios 🩺
+* Atenciones y consultas 📋
 
-## **Instalação e utilização**
+El sistema está construido con **Python utilizando el framework Django**, permitiendo una aplicación web robusta y escalable.
 
-E recomendado o uso de um ambiente virtual para que as dependências fiquem isoladas e para essa função utilizo o poetry, que tambem cria o arquivo **pyproject.toml** que lista, instala e gerencia as dependências.
+---
 
-### **Passo a passo**
+## 🎯 Objetivo
 
-- Clonar o repositório do [PetVet](https://github.com/Joey-Resende/PetVet.git) para sua maquina.
+* Eliminar el uso de registros manuales
+* Centralizar la información clínica
+* Mejorar la eficiencia en la atención
+* Facilitar la gestión de pacientes y consultas
 
-- Instalar o [Poetry](https://python-poetry.org/docs/) . A instalação do **poetry** não será coberta aqui mas deixo o link para a Docs dele com o processo.
+---
 
-- Criar um **ambiente virtual** com o poetry
-  
-  ```bash
-  poetry shell         
-  ```
+## 🚀 Características
 
-- Instala as dependências com o **poetry**
-  
-  ```bash
-  poetry install
-  ```
+* 🐾 Gestión de mascotas (pacientes)
+* 👤 Registro de tutores
+* 🩺 Gestión de veterinarios
+* 📋 Control de atenciones
+* 🧪 Registro de exámenes clínicos:
 
-- Se tudo deu certo ja poderemos iniciar o servidor e testar a aplicação, para isso precisamos do arquivo **manage.py** que se encontra no proximo nivel dos diretórios
-  
-  ```bash
-  cd PetVet/
-  ```
+  * Clínico
+  * Físico
+  * Dermatológico
+* 🔐 Sistema de usuarios
+* 📊 Visualización de registros
+* ✏️ Edición y eliminación de datos
 
-- O arquivo **manage.py** nos fornece alguns comandos, entre eles o de iniciar o servidor.
-  
-  ```bash
-  python3 manage.py runserver
-  ```
+---
 
-- Depois de iniciar o servidor só e necessário criar **um usuário** para acessar o sistema. O usuário padrão que e criado tem todas as permissões exceto a de excluir registros.
+## 🛠️ Tecnologías Utilizadas
 
-## **Funcionalidades**
+* 🐍 Python
+* 🌐 Django
+* 🎨 HTML
+* 🎨 CSS
+* 🧰 Poetry (gestión de dependencias)
 
-Atualmente o sistema possui as seguintes funcionalidades:
+---
 
-- **Atendimentos**
+## 📦 Dependencias
 
-- **Cadastros**
-  
-  - Pets (Pacientes)
-  
-  - Tutores
-  
-  - Veterinários
+El proyecto requiere:
 
-- **Exames**
-  
-  - Clínico
-  
-  - Físico
-  
-  - Dermatológico
+* Python
+* Poetry
+* Django
+* django-crispy-forms
+* crispy-bootstrap5
+* django-braces
 
-- **Criar usuário**
+Consulta todas las dependencias en:
 
-- E possível visualizar os cadastros por lista e também ver os detalhes, além de editar ou excluir os mesmos. 
+```bash id="f7m2q1"
+pyproject.toml
+```
 
-## **Licença**
+---
+
+## ⚙️ Instalación y Uso
+
+Se recomienda utilizar un entorno virtual para aislar las dependencias.
+
+---
+
+### 1️⃣ Clonar el repositorio
+
+```bash id="a8n4k2"
+git clone https://github.com/isairey/tu-repo.git
+cd tu-repo
+```
+
+---
+
+### 2️⃣ Activar entorno virtual con Poetry
+
+```bash id="p3v9z1"
+poetry shell
+```
+
+---
+
+### 3️⃣ Instalar dependencias
+
+```bash id="t6k1m8"
+poetry install
+```
+
+---
+
+### 4️⃣ Ejecutar el servidor
+
+```bash id="x2q7w5"
+cd PetVet/
+python manage.py runserver
+```
+
+---
+
+### 5️⃣ Acceder al sistema
+
+👉 Abrir en navegador:
+
+```
+http://127.0.0.1:8000/
+```
+
+---
+
+### 6️⃣ Crear usuario administrador
+
+```bash id="n5c8r3"
+python manage.py createsuperuser
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```id="z9k2p6"
+PetVet/
+ ┣ 📂 static/
+ ┣ 📂 templates/
+ ┣ 📂 models/
+ ┣ 📂 views/
+ ┣ 📂 forms/
+ ┗ 📄 manage.py
+```
+
+---
+
+## 🔌 Funcionalidades
+
+### 🐾 Pacientes (Mascotas)
+
+* Registro y gestión
+* Visualización detallada
+* Edición y eliminación
+
+---
+
+### 👤 Tutores
+
+* Registro de propietarios
+* Asociación con mascotas
+
+---
+
+### 🩺 Veterinarios
+
+* Registro de personal
+* Gestión de información
+
+---
+
+### 🧪 Exámenes
+
+* Clínico
+* Físico
+* Dermatológico
+
+---
+
+## 🔐 Seguridad
+
+* Autenticación de usuarios
+* Control de permisos
+* Validación de formularios
+
+---
+
+## 🧪 Pruebas
+
+Puedes probar el sistema ejecutando:
+
+```bash id="y4m7c9"
+python manage.py runserver
+```
+
+Y verificando el funcionamiento de:
+
+* Registro de usuarios
+* Creación de mascotas
+* Gestión de consultas
+
+---
+
+## 📜 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por **Isai Reyes**
+
+---
+
+<p align="center">
+  <img src="https://github.com/Joey-Resende/PetVet/blob/main/PetVet/static/img/login_screen.png" width="600">
+</p>
 
 O **PetVet** está disponivel sobre os termos do MIT License. Para os termos completos veja [licença](https://github.com/Joey-Resende/PetVet/blob/main/LICENSE).
 
