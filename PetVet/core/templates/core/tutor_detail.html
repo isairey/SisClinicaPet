@@ -1,0 +1,37 @@
+{% extends 'core/base_model.html' %} 
+{% load static %}
+
+{%block title%}
+<title>PetVet - Tutores</title>
+{% endblock %} 
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-3 rounded-3 border border-opacity-25 border-warning shadow-lg">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'img/client_cat_icon.png/' %}" class="d-block mx-lg-auto img-fluid" alt="" width="300" height="300" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-7 fw-bold text-warning text-body-emphasis lh-1 mb-2">Ficha de Tutor</h1>
+      <h1 class="display-7 fw-bold text-warning text-body-emphasis lh-1 mb-2">{{ tutor.tutor_name }}</h1>
+        <p>Cpf: {{ tutor.cpf }}</p>
+        <p>Telefone: {{ tutor.phone }}</p>
+        <p>Email: {{ tutor.email }}</p>
+        <p>Endereço</p>
+        <p>Cep: {{ tutor.cep }}</p>
+        <p>Rua: {{ tutor.street }}</p>
+        <p>Número: {{ tutor.number }}</p>
+        <p>Bairro: {{ tutor.district }}</p>
+        <p>Cidade: {{ tutor.city }}</p>
+        <p>Estado: {{ tutor.state }}</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="{% url 'tutors' %}" class="btn btn-outline-light btn-sm">Voltar</a>
+        <a href="{% url 'tutor_edit' tutor.pk %}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="{% url 'tutor_delete' tutor.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'core/base_model.html' %} 
+{% load static %}
+
+{%block title%}
+<title>PetVet - Pets</title>
+{% endblock %} 
+
+{% block content %}
+
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-3 rounded-3 border border-opacity-25 border-warning shadow-lg">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{% static 'img/blackcat_icon.png/' %}" class="d-block mx-lg-auto img-fluid" alt="" width="300" height="300" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-7 fw-bold text-warning text-body-emphasis lh-1 mb-2">Ficha de {{ pets.pet_name }}</h1>
+          <p>Id: {{ pets.id }}</p>
+          <p>Nome: {{ pets.pet_name }}</p>
+          <p>Espécie: {{ pets.species }}</p>
+          <p>Raça: {{ pets.breed }}</p>
+          <p>Genero: {{ pets.gender }}</p>
+          <p>Data de Nascimento: {{ pets.date_of_birth }}</p>
+          <p>Castrado: {{ pets.castrated }}</p>
+          <p>Peso: {{ pets.weight }} Kg</p>
+          <p>Tutor(a): {{ pets.tutor_name }}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="{% url 'pets' %}" class="btn btn-outline-light btn-sm">Voltar</a>
+          <a href="{% url 'pet_edit' pets.pk %}" class="btn btn-warning btn-sm">Editar</a>
+          <a href="{% url 'pet_delete' pets.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Tabela de atendimentos-->
+
+<h1 class="display-7 fw-bold text-warning text-body-emphasis lh-1 mb-2">Atendimentos de {{ pets.pet_name }}</h1><hr>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover table-dark" id="pet_table">
+    <thead class="thead-dark">  
+      <tr>
+        <th>Data</th>
+        <th>Tipo atendimento</th>
+        <th>Tipo de exame</th>
+        <th>Queixa</th>
+        <th>Veterinário</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for each in object_list %}
+      <tr>
+        <td>{{ each.date }}</td>
+        <td>{{ each.pet_name }}</td>
+        <td>{{ each.procedure }}</td>
+        <td>{{ each.report }}</td>
+        <td>{{ each.vet_name }}</td>
+        <td>
+          <a href="{% url 'medical_care_detail' each.pk %}" class="btn btn-warning btn-sm">Detalhes</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">Nenhum atendimento cadastrado.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    $(document).ready(function(){
+
+        $('#pet_table').DataTable({
+          responsive: true,
+          // "bSort": false,
+          "aaSorting": [],
+          "pageLength": 10,
+          "language": {
+              "decimal": "",
+              "emptyTable": "Sem dados disponíveis",
+              "info": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+              "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+              "infoFiltered": "(filtrado de _MAX_ registos no total)",
+              "infoPostFix": "",
+              "thousands": ",",
+              "lengthMenu": "",
+              "loadingRecords": "A carregar dados...",
+              "processing": "A processar...",
+              "search": "Procurar:",
+              "zeroRecords": "Não foram encontrados resultados",
+              "paginate": {
+                  "first": "Primeiro",
+                  "last": "Último",
+                  "next": ">",
+                  "previous": "<"
+              },
+              "aria": {
+                  "sortAscending": ": ordem crescente",
+                  "sortDescending": ": ordem decrescente"
+              }
+          }
+      });
+
+    });
+
+</script>
+
+{% endblock %}

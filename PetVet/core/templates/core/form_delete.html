@@ -1,0 +1,29 @@
+{% extends 'core/base_model.html' %} 
+{% load static %}
+
+{%block title%}
+<title>PetVet - Excluir Cadastro</title>
+{% endblock %} 
+
+{%block content%}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h3><strong>Excluir Cadastro</strong></h3>
+        <p>Confirme para excluir o registro definitivamente.</p><hr><br>
+        <div class="row col-3 mx-auto">
+            <img class="card-img-top" src="{% static 'img/haski_dog.png/' %}" alt="Imagem de capa do card">
+          </div>
+        <form action="" method="POST">
+            <p>
+                Deseja excluir o registro: <strong>{{ object }}</strong>?
+            </p>
+
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+            
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+    </div>
+</div>   
+{% endblock %}
